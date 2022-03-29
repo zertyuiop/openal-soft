@@ -21,6 +21,16 @@ jobs:
             build_type: "Release"
           }
         - {
+            name: "Visual Studio 32-bit",
+            os: windows-latest,
+            cmake_opts: "-A Win32 \
+              -DALSOFT_BUILD_ROUTER=ON \
+              -DALSOFT_REQUIRE_WINMM=ON \
+              -DALSOFT_REQUIRE_DSOUND=ON \
+              -DALSOFT_REQUIRE_WASAPI=ON",
+            build_type: "Release"
+          }
+        - {
             name: "macOS",
             os: macos-latest,
             cmake_opts: "-DALSOFT_REQUIRE_COREAUDIO=ON",
